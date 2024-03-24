@@ -110,6 +110,7 @@ class DB
 $Total = new DB('total');
 $News = new DB('news');
 $Item = new DB('item');
+$User = new DB('user');
 
 if (!isset($_SESSION['visited'])) {
     if (($Total->find(['date' => date("Y-m-d")])) == 0) {
