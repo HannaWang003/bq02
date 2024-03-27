@@ -37,12 +37,14 @@ include_once "./api/db.php";
                 <a class="blo" href="?do=que">問卷調查</a>
             </div>
             <div class="hal" id="main">
-                <marquee style="width:80%;">請民眾踴躍投稿電子報，電子報成為大家相互交流、分享的園地!詳見最新文章</marquee>
-                <span style="width:18%; display:inline-block;">
+                <marquee style="width:70%;">請民眾踴躍投稿電子報，電子報成為大家相互交流、分享的園地!詳見最新文章</marquee>
+                <span style="width:25%; display:inline-block;">
                     <?php
 
                     echo (isset($_SESSION['user'])) ? "歡迎,{$_SESSION['user']}<button id='logout'>登出</button>" : "<a href='./index.php?do=login'>會員登入</a>";
-
+                    if (isset($_SESSION['user']) && $_SESSION['user'] == "admin") {
+                        echo "  | <a href='./back.php'><button>管理</button></a>";
+                    }
                     ?>
 
                 </span>
